@@ -20,6 +20,6 @@ class emacs {
   file { '/Applications/Emacs.app':
     ensure  => link,
     target  => $target,
-    require => Package['boxen/brews/emacs']
+    require => Package['emacs']
   }
 }
