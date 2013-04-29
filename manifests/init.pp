@@ -4,15 +4,10 @@
 #
 #   include emacs
 class emacs {
-  require homebrew
 
   $version = '24.3'
 
-  homebrew::formula { 'emacs':
-    before => Package['boxen/brews/emacs']
-  }
-
-  package { 'boxen/brews/emacs':
+  package { 'emacs':
     install_options => [
       '--cocoa',
       '--srgb'
