@@ -9,14 +9,14 @@ class emacs {
   $version = '24.3'
 
   homebrew::formula { 'emacs':
-    before => Package['boxen/brews/emacs'],
-    install_options => [
-      '--cocoa',
-      '--srgb'
-    ]
+    before => Package['boxen/brews/emacs']
   }
 
   package { 'boxen/brews/emacs':
+    install_options => [
+      '--cocoa',
+      '--srgb'
+    ],
     ensure => $version
   }
 
